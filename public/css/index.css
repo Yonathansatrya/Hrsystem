@@ -1,0 +1,140 @@
+/* Reset styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f0fa;
+    color: #333;
+}
+
+.container {
+    max-width: 100%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #1e90ff;
+}
+
+/* Table Wrapper for Horizontal Scroll */
+.table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1200px; /* Set a minimum width to allow scrolling */
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+    white-space: nowrap; /* Prevent text wrapping */
+}
+
+th {
+    background-color: #cce4f7;
+    color: #1e90ff;
+}
+
+tr:nth-child(even) {
+    background-color: #f0f8ff;
+}
+
+/* Action Buttons within table cells */
+.action-cell {
+    position: sticky;
+    right: 0;
+    background-color: #ffffff;
+    display: flex;
+    gap: 5px;
+    justify-content: flex-start;
+}
+
+.edit-btn, .delete-btn {
+    padding: 5px 10px;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.edit-btn {
+    background-color: #4CAF50;
+}
+
+.edit-btn:hover {
+    background-color: #45a049;
+}
+
+.delete-btn {
+    background-color: #f44336;
+    border: none;
+    cursor: pointer;
+}
+
+.delete-btn:hover {
+    background-color: #e53935;
+}
+
+/* Sticky Action Column */
+.action-cell {
+    position: sticky;
+    right: 0;
+    background-color: #ffffff;
+    white-space: nowrap;
+}
+
+/* Button Styling */
+.add-employee-btn {
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #1e90ff;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.add-employee-btn:hover {
+    background-color: #1c86ee;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    th, td {
+        font-size: 12px;
+        padding: 10px;
+    }
+
+    .add-employee-btn, .edit-btn, .delete-btn {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    table {
+        font-size: 12px;
+    }
+}
