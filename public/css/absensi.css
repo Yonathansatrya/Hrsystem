@@ -1,141 +1,224 @@
-/* General styling for container */
+/* Container utama untuk tampilan halaman */
 .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 20px;
-    box-sizing: border-box;
-    background-color: #000; /* Set background to black */
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* Title */
+/* Heading utama */
 h1 {
     text-align: center;
-    font-size: 2.5em;
-    color: #fff; /* Set title color to white */
+    color: #ffffff;
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
-/* Button Styling */
+/* Import button */
+.import-container {
+    text-align: right;
+    margin-bottom: 20px;
+}
+
 .import-button {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #3498db;
+    background-color: #2492c9;
     color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
     text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
 }
 
 .import-button:hover {
-    background-color: #2980b9;
+    background-color: #006f9b;
 }
 
-/* Table Container */
+/* Table container */
 .table-container {
-    margin-top: 20px;
     overflow-x: auto;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 40px;
 }
 
-/* Attendance Table Styling */
+/* Styling table attendance */
 .attendance-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 14px;
-    color: #fff; /* Set all table text to white */
-    background-color: #000; /* Set table background to black */
+    color: #333;
 }
 
-/* Table Headers */
-.attendance-table th {
-    background-color: #3498db;
-    color: white;
-    text-align: left;
-    padding: 12px 15px;
-    font-weight: 600;
-    text-transform: uppercase;
-    font-size: 12px;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-}
-
-/* Table Body Rows */
+.attendance-table th,
 .attendance-table td {
-    padding: 10px 15px;
-    border-bottom: 1px solid #ddd;
-    text-align: left;
-    white-space: nowrap;
-    background-color: #000; /* Set row background to black */
-    color: #fff; /* Set default text color to white */
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #ddd;
 }
 
-/* Zebra striping for table rows */
+.attendance-table th {
+    background-color: #2492c9;
+    font-weight: bold;
+}
+
+.attendance-table td {
+    background-color: #ffffff;
+}
+
 .attendance-table tr:nth-child(even) {
-    background-color: #333; /* Set alternate row color to dark gray */
+    background-color: #f9f9f9;
 }
 
-/* Hover effect for table rows */
+/* Responsive table untuk layar kecil */
+@media screen and (max-width: 768px) {
+    .attendance-table th,
+    .attendance-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    /* Table overflow handling */
+    .table-container {
+        overflow-x: scroll;
+    }
+}
+
+/* Hover effect pada table rows */
 .attendance-table tr:hover {
-    background-color: #444; /* Darker gray on hover */
+    background-color: #f1f1f1;
 }
 
-/* First Column (PIN) */
-.attendance-table td:first-child,
-.attendance-table th:first-child {
-    width: 50px;
+/* Pesan atau status */
+.status-container {
+    margin-top: 20px;
+    text-align: center;
+    color: #666;
+}
+
+/* Gaya tombol */
+button {
+    background-color: #2492c9;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #006f9b;
+}
+
+
+
+
+
+
+
+
+
+/* Container utama untuk halaman */
+.container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Heading utama */
+h1 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Label untuk upload file */
+form label {
+    font-size: 16px;
+    color: #333;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Input file upload */
+input[type="file"] {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 14px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Tombol Import Data */
+.import-button {
+    background-color: #2492c9;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.import-button:hover {
+    background-color: #006f9b;
+}
+
+/* Pesan sukses dan error */
+.alert {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 4px;
     text-align: center;
 }
 
-/* Styling for specific columns (time format, changed to yellow) */
-.attendance-table td:nth-child(8),
-.attendance-table td:nth-child(10),
-.attendance-table td:nth-child(12),
-.attendance-table td:nth-child(14),
-.attendance-table td:nth-child(16),
-.attendance-table td:nth-child(18),
-.attendance-table td:nth-child(40),
-.attendance-table td:nth-child(42) {
-    font-weight: bold;
-    color: yellow; /* Set time-related columns to yellow */
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
 }
 
-/* Red color for values representing lateness or absence */
-.attendance-table td:nth-child(9),
-.attendance-table td:nth-child(11),
-.attendance-table td:nth-child(13),
-.attendance-table td:nth-child(15),
-.attendance-table td:nth-child(17),
-.attendance-table td:nth-child(19) {
-    font-weight: bold;
-    color: red; /* Set lateness or absence columns to red */
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
 }
 
-/* Special color for 'sakit mata cokk' */
-.attendance-table td:contains('') {
-    color: lime; /* Bright green for 'sakit mata cokk' text */
+/* Pesan validasi atau error yang lain */
+.error-message {
+    color: #ff0000;
+    font-size: 14px;
+    margin-top: 10px;
 }
 
-/* Scrollbar styling for table container */
-.table-container::-webkit-scrollbar {
-    height: 10px;
+/* Styling form untuk tampilan yang rapi */
+form {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.table-container::-webkit-scrollbar-thumb {
-    background-color: #3498db;
-    border-radius: 5px;
-}
+/* Responsive form untuk perangkat kecil */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
 
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .attendance-table th, .attendance-table td {
-        font-size: 12px;
-        padding: 8px 10px;
+    h1 {
+        font-size: 24px;
     }
 
     .import-button {
-        padding: 8px 15px;
+        padding: 10px;
         font-size: 14px;
     }
 }

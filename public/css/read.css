@@ -1,0 +1,136 @@
+/* Container utama */
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(36, 113, 183, 0.3); /* Blue shadow */
+}
+
+/* Heading */
+h1 {
+    color: #2492c9;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Tombol utama */
+.add-employee-btn, .export-btn, .import-btn {
+    display: inline-block;
+    margin-right: 10px;
+    padding: 10px 20px;
+    background-color: #2492c9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-employee-btn:hover, .export-btn:hover, .import-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Tabel */
+.table-wrapper {
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(36, 113, 183, 0.1); /* Light blue shadow */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+table th, table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+table th {
+    background-color: #2492c9; /* Blue for header */
+    color: white;
+}
+
+table td {
+    color: #333;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #e0e0e0;
+}
+
+/* Tombol aksi (Edit dan Archive) */
+.action-cell {
+    white-space: nowrap;
+}
+
+.edit-btn, .archive-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.edit-btn {
+    background-color: #2492c9; /* Blue button */
+    color: white;
+}
+
+.edit-btn:hover {
+    background-color: #0056b3;
+}
+
+.archive-btn {
+    background-color: #f44336; /* Red button for Archive */
+    color: white;
+}
+
+.archive-btn:hover {
+    background-color: #d32f2f;
+}
+
+/* Alert success */
+.alert-success {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    text-align: center;
+}
+
+/* Form file upload */
+form {
+    margin-top: 10px;
+}
+
+input[type="file"] {
+    margin-bottom: 10px;
+}
+
+/* Responsive styling */
+@media screen and (max-width: 768px) {
+    table, table th, table td {
+        font-size: 14px;
+    }
+
+    .add-employee-btn, .export-btn, .import-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+}

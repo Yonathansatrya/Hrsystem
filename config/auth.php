@@ -15,7 +15,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
-        'passwords' => 'users',
+        'passwords' => 'employees', // Ubah 'users' menjadi 'employees'
     ],
 
     /*
@@ -38,7 +38,7 @@ return [
     'guards' => [
         'web' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'employees', // Ubah dari 'users' menjadi 'employees'
         ],
     ],
 
@@ -60,15 +60,10 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'employees' => [ // Ubah 'users' menjadi 'employees'
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Models\Employee::class, // Pastikan model menunjuk ke Employee
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
     ],
 
     /*
@@ -87,8 +82,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'employees' => [ // Ubah 'users' menjadi 'employees'
+            'provider' => 'employees', // Pastikan 'provider' menggunakan 'employees'
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

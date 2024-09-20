@@ -1,119 +1,132 @@
-/* General Styles */
-body {
-    background-color: #121212; /* Dark Background */
-    color: #e0e0e0; /* Light Text */
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 30px; /* Increased Padding */
-}
-
-h1 {
-    font-size: 2.5em; /* Larger Font Size */
-    color: #ffcc00; /* Accent Yellow */
-    margin-bottom: 30px; /* Increased Bottom Margin */
-    text-align: center;
-}
-
-/* Form Styles */
+/* Container utama untuk form */
 form {
-    background-color: #1c1c1c; /* Darker Form Background */
-    padding: 30px; /* Increased Padding */
+    background-color: #fff;
+    padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7); /* Stronger Shadow */
-    max-width: 700px; /* Increased Width */
-    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(36, 113, 183, 0.2); /* Bayangan lembut berwarna biru */
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
 }
 
+/* Heading utama */
+h1 {
+    text-align: center;
+    color: #2492c9;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+/* Fieldset */
 fieldset {
-    border: 1px solid #333333; /* Dark Border */
-    border-radius: 5px;
-    padding: 20px; /* Increased Padding */
-    margin-bottom: 30px; /* Increased Margin Bottom */
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
 }
 
 legend {
-    color: #ffcc00; /* Accent Yellow for Legends */
-    padding: 0 15px; /* Increased Padding */
+    color: #2492c9;
     font-weight: bold;
-    font-size: 1.2em; /* Larger Font Size */
+    padding: 0 10px;
+    font-size: 18px;
 }
 
+/* Label */
 label {
     display: block;
-    margin-bottom: 12px; /* Increased Margin Bottom */
-    font-weight: bold;
-    color: #e0e0e0; /* Light Text */
-    font-size: 1.1em; /* Larger Font Size */
+    color: #333; /* Teks berwarna hitam */
+    font-size: 14px;
+    margin-bottom: 8px;
 }
 
-input[type="text"], input[type="number"], input[type="email"], input[type="date"], textarea, select {
-    width: calc(100% - 20px);
-    padding: 12px 15px;
-    margin-bottom: 18px;
-    background-color: #2c2c2c;
-    color: #e0e0e0;
-    border: 1px solid #444444;
+/* Input dan textarea */
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
     border-radius: 4px;
+    font-size: 14px;
+    color: #333; /* Teks berwarna hitam */
     box-sizing: border-box;
-    font-size: 1.1em;
 }
 
+/* Radio button */
+.marital-status-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+label[for="married"],
+label[for="single"] {
+    margin-right: 20px;
+}
 
 input[type="radio"] {
-    margin-right: 8px; /* Increased Margin */
+    margin-right: 5px;
+    vertical-align: middle;
 }
 
-textarea {
-    height: 120px; /* Increased Height */
-    resize: vertical;
-}
-
-input[type="text"]::placeholder, input[type="number"]::placeholder, input[type="email"]::placeholder, input[type="date"]::placeholder, textarea::placeholder {
-    color: #999999; /* Placeholder Text Color */
-}
-
-/* Button Styles */
-button[type="submit"], .btn {
-    background-color: #ffcc00; /* Accent Yellow */
-    color: #121212; /* Dark Text */
-    padding: 12px 25px; /* Increased Padding */
+/* Tombol submit */
+button[type="submit"] {
+    background-color: #2492c9; /* Biru untuk tombol */
+    color: white;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 1.2em; /* Larger Font Size */
+    font-size: 16px;
     transition: background-color 0.3s ease;
-    text-align: center;
+}
+
+button[type="submit"]:hover {
+    background-color: #0056b3; /* Biru lebih gelap saat hover */
+}
+
+/* Tombol kembali */
+a.btn.btn-secondary {
     display: inline-block;
-    margin-right: 15px; /* Increased Margin */
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #f44336; /* Warna merah untuk tombol kembali */
+    color: white;
     text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
 }
 
-button[type="submit"]:hover, .btn:hover {
-    background-color: #e6b800; /* Darker Yellow on Hover */
+a.btn.btn-secondary:hover {
+    background-color: #d32f2f; /* Lebih gelap saat hover */
 }
 
-.btn-secondary {
-    background-color: #444444; /* Dark Gray */
-    color: #e0e0e0; /* Light Text */
-    text-decoration: none;
+/* Fieldset untuk data keluarga */
+#family-data {
+    display: none;
 }
 
-.btn-secondary:hover {
-    background-color: #333333; /* Darker Gray on Hover */
+/* Tampilan field yang dinamis (Kontrak dan Tetap) */
+#contract_date_label, #contract_date {
+    display: none;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
+/* Responsive styling */
+@media screen and (max-width: 768px) {
     form {
-        padding: 20px; /* Slightly Larger Padding */
+        padding: 15px;
+        max-width: 100%;
     }
 
-    input[type="text"], input[type="number"], input[type="email"], input[type="date"], textarea, select {
-        width: calc(100% - 20px);
-    }
-
-    button[type="submit"], .btn {
-        padding: 10px 20px; /* Slightly Larger Padding */
-        font-size: 1em; /* Larger Font */
+    button[type="submit"],
+    a.btn.btn-secondary {
+        width: 100%;
+        text-align: center;
+        margin-top: 10px;
     }
 }

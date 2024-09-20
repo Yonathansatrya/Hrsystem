@@ -1,42 +1,45 @@
-<!-- resources/views/login.blade.php -->
+<!-- resources/views/auth/login.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Login</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
 </head>
 <body>
     <div class="login-container">
-        <div class="login-header">
-            <img src="{{ asset('css/Logo_S.png') }}" alt="Logo" class="logo">
-            <h2>Login</h2>
-        </div>
-
-        @if (session('error'))
-            <div class="error-messages">
-                {{ session('error') }}
-            </div>
-        @endif
-
+        <img src="{{ asset('images/school.png') }}" alt="School Logo" class="logo">
+        <h2>Login</h2>
         <form method="POST" action="{{ route('login') }}">
             @csrf
 
-            <!-- Email Address -->
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input id="email" type="email" name="email" required autofocus />
+            <!-- Email -->
+            <div>
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" value="{{ old('email') }}" required autofocus>
             </div>
 
-            <!-- ID Number (as Password) -->
-            <div class="form-group">
-                <label for="id_number">Password</label>
-                <input id="id_number" type="password" name="id_number" required />
+            <!-- Password -->
+            <div>
+                <label for="id_number">Password :</label>
+                <input type="password" id="id_number" name="id_number" required>
             </div>
 
-            <button type="submit">Log In</button>
+            <button type="submit">Login</button>
+
+            <div class="divider"></div>
+
+            <!-- Error Messages -->
+            @if ($errors->any())
+                <div class="error">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
         </form>
     </div>
 </body>

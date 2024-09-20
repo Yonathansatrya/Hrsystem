@@ -1,7 +1,7 @@
-@extends('admin.dashboard')
+@extends('auth.dashboard')
 
-@section('title', 'Daftar Karyawan dan Data Keluarga')
-
+@section('title', 'Daftar Karyawan BN')
+<link rel="stylesheet" href="{{asset('css/read.css')}}">
 @section('content')
     <div class="container">
         <h1>Daftar Karyawan</h1>
@@ -25,7 +25,7 @@
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>No Ktp</th>
                         <th>Nama Lengkap</th>
                         <th>Nama Panggilan</th>
                         <th>Golongan</th>

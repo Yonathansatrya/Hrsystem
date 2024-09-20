@@ -1,7 +1,7 @@
-@extends('admin.dashboard')
+@extends('auth.dashboard')
 
 @section('title', 'Data Pelanggaran')
-
+ <link rel="stylesheet" href="{{asset('css/pelanggaran.css')}}">
 @section('content')
     <div class="container">
         <h1>Data Pelanggaran</h1>

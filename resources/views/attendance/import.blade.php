@@ -1,7 +1,7 @@
-@extends('admin.dashboard')
+@extends('auth.dashboard')
 
 @section('title', 'Import Attendance Data')
-
+<link rel="stylesheet" href="{{asset('css/absensi.css')}}">
 @section('content')
     <h1>Import Attendance Data</h1>
     <form action="{{ route('attendances.import') }}" method="POST" enctype="multipart/form-data">

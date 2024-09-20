@@ -1,0 +1,158 @@
+/* resources/css/profile.css */
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-picture {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #2492c9; /* Blue border around profile picture */
+}
+
+.profile-header h2 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.profile-header p {
+    color: #666;
+    font-size: 18px;
+}
+
+.notification-button {
+    margin-bottom: 20px;
+}
+
+.notification-button button {
+    background-color: #2492c9; /* Blue background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s;
+}
+
+.notification-button button:hover {
+    background-color: #1a73e8; /* Slightly darker blue on hover */
+}
+
+.notification-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.profile-info {
+    text-align: left;
+    width: 100%;
+    max-width: 800px;
+}
+
+.profile-table, .family-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.profile-table th, .profile-table td,
+.family-table th, .family-table td {
+    border: 1px solid #ddd;
+    padding: 12px;
+}
+
+.profile-table th, .family-table th {
+    background-color: #f4f4f4;
+    color: #333;
+    text-align: left;
+}
+
+.family-table thead {
+    background-color: #f4f4f4;
+}
+
+.edit-request {
+    margin-top: 20px;
+    text-align: left;
+    position: relative;
+}
+
+.edit-request button {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.edit-request button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.edit-form {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.edit-form h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.edit-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.edit-form button {
+    background-color: #007bff; /* Blue background */
+    color: #fff; /* White text */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.edit-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+#cancel-edit {
+    background-color: #ccc; /* Grey background for cancel */
+}
+
+#cancel-edit:hover {
+    background-color: #bbb; /* Darker grey on hover */
+}

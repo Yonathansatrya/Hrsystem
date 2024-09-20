@@ -38,3 +38,4 @@ class Attendance extends Model
         'rutin_umum',
     ];
 }
+    

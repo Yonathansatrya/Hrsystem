@@ -21,12 +21,19 @@ class EmployeeController extends Controller
 
     public function import(Request $request)
     {
+
+        $request->validate([
+            'file' => 'required|mimes:xls,xlsx',
+        ]);
+
         $file = $request->file('file');
 
+        // Import data dari file menggunakan EmployeesImport
         Excel::import(new EmployeesImport, $file);
 
         return redirect()->route('employees.index')->with('success', 'Data karyawan berhasil diimpor.');
     }
+
 
 
     public function export()
@@ -38,7 +45,7 @@ class EmployeeController extends Controller
     public function archived()
     {
         $employees = Employee::with('familyData')->where('archived', true)->get();
-        return view('Viewadmin.employe.archived', compact('employees'));
+        return view('employe.archived', compact('employees'));
     }
 
     // Show Create Employee Form
@@ -79,7 +86,6 @@ class EmployeeController extends Controller
                 'organizational_experience',
                 'archived'
             ]));
-
             // If family data is provided, create family data
             if ($request->filled('mate_name') || $request->filled('child_name')) {
                 FamilyData::create([
@@ -99,7 +105,7 @@ class EmployeeController extends Controller
     public function edit($id)
     {
         $employee = Employee::with('familyData')->findOrFail($id);
-        return view('Viewadmin.employe.edit', compact('employee'));
+        return view('employe.edit', compact('employee'));
     }
 
     // Update Employee and Family Data

@@ -26,3 +26,4 @@ class EmployeeRecord extends Model
         return $this->belongsTo(Employee::class, 'id_number', 'id_number');
     }
 }
+    

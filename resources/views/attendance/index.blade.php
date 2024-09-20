@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('auth.dashboard')
 
 @section('title', 'Attendance List')
 

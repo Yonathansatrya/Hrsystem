@@ -1,4 +1,4 @@
-@extends('admin.dashboard')
+@extends('auth.dashboard')
 
 @section('title', 'Tambah Karyawan')
 
@@ -16,12 +16,18 @@
             var status = document.getElementById('status').value;
             var contractDateField = document.getElementById('contract_date');
             var contractDateLabel = document.getElementById('contract_date_label');
+            var workDateField = document.getElementById('work_date');
+            var workDateLabel = document.getElementById('work_date_label');
             if (status === 'Kontrak') {
                 contractDateField.style.display = 'block';
                 contractDateLabel.style.display = 'block';
+                workDateField.style.display = 'none';
+                workDateLabel.style.display = 'none';
             } else {
                 contractDateField.style.display = 'none';
                 contractDateLabel.style.display = 'none';
+                workDateField.style.display = 'block';
+                workDateLabel.style.display = 'block';
             }
         }
 
@@ -78,12 +84,19 @@
             <label for="contract_date" id="contract_date_label" style="display: none;">Tanggal Kontrak:</label>
             <input type="date" id="contract_date" name="contract_date" style="display: none;">
 
-            <label for="work_date">Tanggal Di angkat Tetap:</label>
+            <label for="work_date" id="work_date_label">Tanggal Di angkat Tetap:</label>
             <input type="date" id="work_date" name="work_date" required>
 
-            <label for="position">Golongan:</label>
-            <input type="text" id="position" name="position" required>
-
+            <label for="position">Jabatan:</label>
+            <select id="position" name="position" required>
+                <option value="GURU">Guru</option>
+                <option value="Kepala Sekolah">Kepala Sekolah</option>
+                <option value="Pamong Aspa">Pamong Aspa</option>
+                <option value="Pamong Aspi">Pamong Aspi</option>
+                <option value="Supir">Supir</option>
+                <option value="Staf Kebersihan">Staf Kebersihan</option>
+                <option value="HRD">HRD</option>
+            </select>
 
             <label for="gender">Jenis Kelamin:</label>
             <select id="gender" name="gender" required>
@@ -139,6 +152,7 @@
                 <option value="B">B</option>
                 <option value="AB">AB</option>
                 <option value="O">O</option>
+                <option value="Tidak Diketahui">Tidak Diketahui</option>
             </select>
 
             <label for="last_education">Pendidikan Terakhir:</label>
