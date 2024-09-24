@@ -1,4 +1,3 @@
-<!-- resources/views/auth/login.blade.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,29 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="{{ asset('css/login.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <body>
-    <div class="login-container">
-        <img src="{{ asset('images/school.png') }}" alt="School Logo" class="logo">
-        <h2>Login</h2>
-        <form method="POST" action="{{ route('login') }}">
+    <div class="wrapper">
+        <div class="logo">
+            <img src="{{ asset('images/school.png') }}" alt="School Logo">
+        </div>
+        <div class="text-center mt-4 name">
+            SMK BAGIMU NEGERIKU 
+        </div>
+        <form method="POST" action="{{ route('login') }}" class="p-3 mt-3">
             @csrf
 
             <!-- Email -->
-            <div>
-                <label for="email">Email :</label>
-                <input type="email" id="email" name="email" value="{{ old('email') }}" required autofocus>
+            <div class="form-field d-flex align-items-center">
+                <span class="far fa-user"></span>
+                <input type="email" name="email" id="email" placeholder="Email" value="{{ old('email') }}" required autofocus>
             </div>
 
             <!-- Password -->
-            <div>
-                <label for="id_number">Password :</label>
-                <input type="password" id="id_number" name="id_number" required>
+            <div class="form-field d-flex align-items-center">
+                <span class="fas fa-key"></span>
+                <input type="password" name="id_number" id="id_number" placeholder="Password" required>
             </div>
 
-            <button type="submit">Login</button>
+            <button type="submit" class="btn mt-3">Login</button>
 
-            <div class="divider"></div>
+          
 
             <!-- Error Messages -->
             @if ($errors->any())

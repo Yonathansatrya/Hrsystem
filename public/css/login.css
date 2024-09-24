@@ -1,97 +1,118 @@
-/* resources/css/login.css */
+/* Importing fonts from Google */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-body {
+/* Resetting */
+* {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5; /* Light grey background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-}
-
-.login-container {
-    background-color: #fff; /* White background */
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Drop shadow */
-    text-align: center;
-    width: 450px;
-    position: relative;
-}
-
-h2 {
-    color: #2492c9; /* Blue text for title */
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-/* School Logo */
-.login-container img.logo {
-    max-width: 120px;
-    margin-bottom: 15px;
-}
-
-label {
-    display: block;
-    color: #000; /* Black text for labels */
-    margin-bottom: 8px;
-    text-align: left;
-    font-weight: bold;
-}
-
-input[type="email"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
     box-sizing: border-box;
-    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
 }
 
-input[type="email"]:focus,
-input[type="password"]:focus {
-    outline: none;
-    border-color: #2492c9; /* Blue border on focus */
-    box-shadow: 0 0 5px rgba(36, 146, 201, 0.5); /* Blue drop shadow on focus */
+body {
+    background: #ecf0f3;
 }
 
-button {
+.wrapper {
+    text-align: center;
+    max-width: 450px;
+    min-height: 400px;
+    margin:250px auto;
+    padding: 40px 30px 40px 30px;
+    background-color: #ecf0f3;
+    border-radius: 15px;
+    box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+}
+
+.logo {
+    width: 80px;
+    margin: auto;
+}
+
+.logo img {
     width: 100%;
-    padding: 10px;
-    background-color: #2492c9; /* Blue button */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px #5f5f5f,
+                0px 0px 0px 5px #ecf0f3,
+                8px 8px 15px #a7aaa7,
+                -8px -8px 15px #fff;
+}
+
+.wrapper .name {
+    font-weight: 600;
+    font-size: 1.4rem;
+    letter-spacing: 1.3px;
+    padding-left: 10px;
+    color: #555;
+}
+
+/* Updated form-field layout for icon and text alignment */
+.wrapper .form-field {
+    position: relative;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+.wrapper .form-field input {
+    width: 100%;
+    display: block;
     border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    color: #fff; /* White text on button */
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    outline: none;
+    background: none;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 10px 40px 10px 40px; /* Adjusted padding for spacing between icon and text */
 }
 
-button:hover {
-    background-color: #1a6a94; /* Darker blue on hover */
+/* Positioning the icon */
+.wrapper .form-field span {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.2rem;
+    color: #555;
 }
 
-/* Divider line */
-.login-container .divider {
-    margin: 20px 0;
-    border-bottom: 1px solid #ccc; /* Grey divider line */
+.wrapper .btn {
+    box-shadow: none;
+    width: 100%;
+    height: 40px;
+    background-color: #03A9F4;
+    color: #fff;
+    border-radius: 25px;
+    border: 2px solid white; /* Added white border */
+    box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
+    letter-spacing: 1.3px;
 }
 
-/* Error messages */
+.wrapper .btn:hover {
+    background-color: #039BE5;
+    border-color: white; /* Keep the border white on hover */
+}
+
+
+.wrapper a {
+    text-decoration: none;
+    font-size: 0.8rem;
+    color: #03A9F4;
+}
+
+.wrapper a:hover {
+    color: #039BE5;
+}
+
 .error {
     color: red;
     margin-top: 10px;
-    text-align: left;
-    font-size: 14px;
 }
 
-/* Adjustments for smaller screens */
-@media (max-width: 768px) {
-    .login-container {
-        width: 90%;
+@media(max-width: 380px) {
+    .wrapper {
+        margin: 30px 20px;
+        padding: 40px 15px 15px 15px;
     }
 }

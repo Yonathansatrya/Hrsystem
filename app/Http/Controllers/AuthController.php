@@ -8,6 +8,8 @@ use App\Models\Employee;
 use App\Models\Attendance;
 use App\Models\EmployeeRecord;
 use App\Models\FamilyData;
+use App\Models\Comment; // Import model Comment
+use App\Models\Notification; // Import model Notification
 use Illuminate\Support\Facades\Log;
 
 class AuthController extends Controller
@@ -22,13 +24,17 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required|email',
+            'email' => 'required',
             'id_number' => 'required'
         ]);
 
         Log::info('Login attempt with email: ' . $request->email);
 
-        $employee = Employee::where('email', $request->email)
+        // Cek apakah login menggunakan id_number atau email
+        $loginType = filter_var($request->input('email'), FILTER_VALIDATE_EMAIL) ? 'email' : 'id_number';
+
+        // Ambil employee berdasarkan email atau id_number
+        $employee = Employee::where($loginType, $request->email)
                             ->where('id_number', $request->id_number)
                             ->first();
 
@@ -36,6 +42,7 @@ class AuthController extends Controller
             Log::info('Employee found: ', $employee->toArray());
             Auth::login($employee);
 
+            // Arahkan ke dashboard sesuai dengan peran user
             if ($employee->isAdmin()) {
                 return redirect()->route('admin.dashboard');
             } else {
@@ -48,16 +55,13 @@ class AuthController extends Controller
             ]);
         }
     }
+
     // Fungsi logout
     public function logout()
     {
         Auth::logout();
         return redirect()->route('login');
     }
-
-    // Fungsi lainnya
-
-
 
     // Fungsi untuk menampilkan kehadiran user
     public function userAttendances()
@@ -98,5 +102,30 @@ class AuthController extends Controller
 
         // Redirect ke halaman profil dengan pesan sukses
         return redirect()->route('user.profile')->with('status', 'Permintaan edit profil telah dikirim ke admin.');
+    }
+
+    // Fungsi untuk menambahkan komentar
+    public function addComment(Request $request)
+    {
+        $request->validate([
+            'comment' => 'required|string|max:500',
+            'employee_record_id' => 'required|exists:employee_records,id', // Sesuaikan dengan nama tabel dan kolom Anda
+        ]);
+
+        $comment = Comment::create([
+            'employee_record_id' => $request->employee_record_id,
+            'comment' => $request->comment,
+            'user_id' => Auth::id(), // ID pengguna yang memberikan komentar
+        ]);
+
+        // Membuat notifikasi untuk pengguna terkait
+        Notification::create([
+            'notifiable_id' => $comment->employee_record_id, // ID record yang dikomentari
+            'notifiable_type' => 'App\Models\EmployeeRecord', // Tipe notifikasi, sesuaikan dengan model yang digunakan
+            'type' => 'comment', // Tipe notifikasi, bisa disesuaikan
+            'data' => json_encode(['comment' => $comment->comment, 'user_id' => Auth::id()]),
+        ]);
+
+        return redirect()->back()->with('status', 'Komentar berhasil ditambahkan dan notifikasi telah dikirim.');
     }
 }

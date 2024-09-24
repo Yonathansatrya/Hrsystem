@@ -1,4 +1,4 @@
-@extends('auth.dashboard')
+@extends('auth.sidebar')
 
 @section('title', 'Profil Saya')
 
@@ -9,14 +9,6 @@
         <img src="{{ asset('images/' . $user->profile_picture) }}" alt="Foto Profil" class="profile-picture">
         <h2>{{ $user->full_name }}</h2>
         <p>{{ \Carbon\Carbon::parse($user->birth_date)->age }} Tahun</p>
-    </div>
-
-    <!-- Tombol Notifikasi dengan Icon -->
-    <div class="notification-button">
-        <button type="button" id="show-notifications">
-            <img src="{{ asset('images/bell.png') }}" alt="Notifikasi" class="notification-icon">
-            Lihat Notifikasi
-        </button>
     </div>
 
     <div class="profile-info">

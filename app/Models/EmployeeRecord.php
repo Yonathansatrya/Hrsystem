@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
+use PhpOffice\PhpSpreadsheet\Writer\Ods\Cell\Comment;
 
 class EmployeeRecord extends Model
 {
@@ -24,6 +25,11 @@ class EmployeeRecord extends Model
     public function employee()
     {
         return $this->belongsTo(Employee::class, 'id_number', 'id_number');
+    }
+    
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
     }
 }
     

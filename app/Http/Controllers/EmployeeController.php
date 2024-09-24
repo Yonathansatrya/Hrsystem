@@ -12,6 +12,12 @@ use App\Imports\EmployeesImport;
 
 class EmployeeController extends Controller
 {
+    public function show($id)
+    {
+        $employee = Employee::with('familyData')->findOrFail($id);
+        return response()->json($employee);
+    }
+
     // Display Active Employees (not archived)
     public function index()
     {

@@ -1,5 +1,5 @@
 <!-- resources/views/auth/records.blade.php -->
-@extends('auth.dashboard')
+@extends('auth.sidebar')
 
 @section('title', 'Catatan Pelanggaran Saya')
 

@@ -12,6 +12,7 @@ class CreateEmployeesTable extends Migration
             $table->id();
             $table->string('id_number')->unique();
             $table->string('email')->unique();
+            $table->string('password')->nullable();
             $table->string('full_name');
             $table->string('nickname');
             $table->date('contract_date')->nullable();

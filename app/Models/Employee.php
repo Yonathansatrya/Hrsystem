@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Models;
-
+    
 use Illuminate\Foundation\Auth\User as Authenticatable; // Gunakan Authenticatable untuk otentikasi
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Notifications\Notifiable;
 
 class Employee extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
     // Daftar kolom yang bisa diisi secara massal
     protected $fillable = [

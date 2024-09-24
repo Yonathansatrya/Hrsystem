@@ -1,5 +1,5 @@
 <!-- resources/views/auth/attendances.blade.php -->
-@extends('auth.dashboard')
+@extends('auth.sidebar')
 
 @section('title', 'Kehadiran Saya')
 

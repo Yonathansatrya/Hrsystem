@@ -1,4 +1,4 @@
-@extends('auth.dashboard')
+@extends('auth.sidebar')
 
 @section('title', 'Karyawan Terarsip')
 <link rel="stylesheet" href="{{asset('css/read.css')}}">

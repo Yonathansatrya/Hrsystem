@@ -1,4 +1,4 @@
-@extends('auth.dashboard')
+@extends('auth.sidebar')
 
 @section('title', 'Import Attendance Data')
 <link rel="stylesheet" href="{{asset('css/absensi.css')}}">

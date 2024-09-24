@@ -3,134 +3,298 @@
     margin-top: 20px;
     padding: 20px;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(36, 113, 183, 0.3); /* Blue shadow */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Heading */
+/* Heading utama */
 h1 {
-    color: #2492c9;
+    color: #3498db;
+    font-weight: 600;
     text-align: center;
     margin-bottom: 20px;
 }
 
-/* Tombol utama */
+/* Tombol Utama */
 .add-employee-btn, .export-btn, .import-btn {
-    display: inline-block;
-    margin-right: 10px;
     padding: 10px 20px;
-    background-color: #2492c9;
-    color: white;
+    background-color: #3498db;
+    color: #fff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     text-decoration: none;
-    cursor: pointer;
     transition: background-color 0.3s ease;
+    cursor: pointer;
+    margin-right: 10px;
 }
 
 .add-employee-btn:hover, .export-btn:hover, .import-btn:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
 }
 
-/* Tabel */
-.table-wrapper {
-    margin: 20px 0;
-    overflow-x: auto;
+/* Grid layout untuk kartu karyawan */
+.employee-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(36, 113, 183, 0.1); /* Light blue shadow */
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-table th, table td {
-    padding: 12px;
+/* Kartu karyawan */
+.employee-card {
+    background-color: #f9f9f9;
     border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease;
+}
+
+.employee-card:hover {
+    transform: translateY(-5px);
+}
+
+.employee-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #ddd;
+}
+
+/* Info karyawan */
+.employee-info h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: #2c3e50;
+}
+
+.employee-info p {
+    margin: 5px 0;
+    color: #7f8c8d;
+    font-size: 14px;
+}
+
+/* Tombol View */
+.view-btn {
+    background-color: #1abc9c;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.view-btn:hover {
+    background-color: #16a085;
+}
+
+/* Modal Styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Background hitam transparan */
+}
+
+.modal-content {
+    margin: 10% auto;
+    padding: 20px;
+    border: none;
+    width: 50%;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modal-header {
+    border-bottom: none;
+    padding-bottom: 10px;
     text-align: center;
 }
 
-table th {
-    background-color: #2492c9; /* Blue for header */
-    color: white;
+.modal-title {
+    font-weight: 600;
+    font-size: 24px;
+    color: #2980b9;
 }
 
-table td {
-    color: #333;
+.modal-body img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    margin-bottom: 15px;
 }
 
-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+.modal-body p {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #34495e;
 }
 
-table tr:hover {
-    background-color: #e0e0e0;
-}
-
-/* Tombol aksi (Edit dan Archive) */
-.action-cell {
-    white-space: nowrap;
-}
-
+/* Tombol dalam Modal */
 .edit-btn, .archive-btn {
-    display: inline-block;
-    padding: 8px 16px;
-    margin-right: 5px;
+    padding: 10px 20px;
+    border-radius: 5px;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
-    text-decoration: none;
+    margin-right: 10px;
 }
 
 .edit-btn {
-    background-color: #2492c9; /* Blue button */
-    color: white;
+    background-color: #3498db;
+    color: #fff;
 }
 
 .edit-btn:hover {
-    background-color: #0056b3;
+    background-color: #2980b9;
 }
 
 .archive-btn {
-    background-color: #f44336; /* Red button for Archive */
-    color: white;
+    background-color: #e74c3c;
+    color: #fff;
 }
 
 .archive-btn:hover {
-    background-color: #d32f2f;
+    background-color: #c0392b;
 }
 
-/* Alert success */
-.alert-success {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px;
-    margin-bottom: 15px;
-    border-radius: 4px;
-    text-align: center;
+/* Modal Footer */
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px;
 }
 
-/* Form file upload */
-form {
-    margin-top: 10px;
+/* Kotak Data */
+.data-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-input[type="file"] {
+.data-box h3 {
+    font-size: 18px;
+    color: #2c3e50;
     margin-bottom: 10px;
 }
 
-/* Responsive styling */
-@media screen and (max-width: 768px) {
-    table, table th, table td {
-        font-size: 14px;
+.data-box p {
+    margin: 0;
+    color: #7f8c8d;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .employee-card {
+        margin-bottom: 20px;
     }
 
-    .add-employee-btn, .export-btn, .import-btn {
-        padding: 8px 14px;
-        font-size: 14px;
+    .modal-content {
+        width: 90%;
     }
+
+    .modal-body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-body img {
+        margin-bottom: 20px;
+    }
+
+    .modal-body p {
+        text-align: center;
+    }
+}
+
+
+/* Actions Buttons */
+.actions {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.actions .btn {
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.actions .btn-primary {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.actions .btn-success {
+    background-color: #28a745;
+    color: #fff;
+}
+
+.actions .btn-info {
+    background-color: #17a2b8;
+    color: #fff;
+}
+
+.actions .btn:hover {
+    opacity: 0.9;
+}
+
+/* Employee Cards */
+.employee-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Modal Styling */
+.modal-body {
+    display: flex;
+    align-items: center;
+}
+
+.modal-body img {
+    width: 150px; /* Larger round photo */
+    height: 150px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    margin-right: 20px; /* Space between image and text */
+}
+
+.modal-body .employee-info {
+    flex: 1; /* Take up remaining space */
+}
+
+.modal-body .employee-info p {
+    margin: 5px 0;
+}
+
+/* Close Button in Modal */
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    color: #000;
+    cursor: pointer;
 }

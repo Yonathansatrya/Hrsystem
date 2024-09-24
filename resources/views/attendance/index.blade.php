@@ -1,4 +1,4 @@
-@extends('auth.dashboard')
+@extends('auth.sidebar')
 
 @section('title', 'Attendance List')
 

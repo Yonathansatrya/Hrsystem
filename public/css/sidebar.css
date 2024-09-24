@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+    background-color: #f5f5f5; /* Light grey background */
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.dashboard-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.dashboard-title {
+    color: #ffffff; /* Warna teks putih */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Bayangan teks dengan warna hitam transparan */
+    font-weight: bold; /* Menebalkan teks */
+    letter-spacing: 1px; /* Jarak antar huruf */
+    font-size: 26px; /* Ukuran font yang sedikit lebih besar */
+}
+
+.sidebar {
+    background-color: #ffffff; /* White background for sidebar */
+    width: 250px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow */
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid #007bff; /* Blue line divider */
+}
+
+.sidebar-header {
+    background-color: #007bff; /* Blue background for header */
+    color: #ffffff; /* White text */
+    padding: 20px;
+    text-align: center;
+}
+
+.sidebar-header .logo {
+    max-width: 100px; /* Adjust logo size */
+    margin-bottom: 10px;
+    border-radius: 5px; /* Rounded corners for logo */
+}
+
+.sidebar-header .dashboard-title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold; /* Bold title */
+}
+
+nav.nav-links {
+    flex: 1;
+}
+
+nav.nav-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav.nav-links ul li {
+    border-bottom: 1px solid #e0e0e0; /* Lighter grey line divider */
+}
+
+nav.nav-links ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #000000; /* Dark grey text */
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav.nav-links ul li a:hover {
+    background-color: #e7f1ff; /* Light blue background on hover */
+    color: #007bff; /* Bright blue text on hover */
+}
+
+.profile-logout {
+    border-top: 1px solid #e0e0e0; /* Lighter grey line divider */
+}
+
+.profile-logout ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.profile-logout ul li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    color: #333; /* Dark grey text */
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.profile-logout ul li a:hover {
+    background-color: #e7f1ff; /* Light blue background on hover */
+    color: #007bff; /* Bright blue text on hover */
+}
+
+.main-content {
+    flex: 1;
+    padding: 25px;
+    background-color: #ffffff; /* White background for main content */
+    overflow-y: auto;
+    border-radius: 5px; /* Slightly rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Navbar styles */
+.navbar {
+    display: flex;
+    justify-content: flex-end; /* Menyusun konten di sebelah kanan */
+    align-items: center;
+    background-color: #ffffff; /* White background for navbar */
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0; /* Lighter grey line divider */
+}
+
+.profile-logout {
+    display: flex; /* Menyusun item secara horizontal */
+    align-items: center; /* Rata tengah secara vertikal */
+}
+
+.profile-logout ul {
+    display: flex;
+    list-style: none;
+    margin: 0; /* Menghapus margin */
+    padding: 0; /* Menghapus padding */
+}
+
+.profile-logout li {
+    margin-right: 15px;
+}
+
+.notification {
+    position: relative;
+    margin-right: 15px; /* Spasi antara notifikasi dan item lain */
+}
+
+.notification-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #007bff; /* Blue color for notifications */
+    font-size: 18px;
+}
+
+.notification-count {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 12px;
+}
