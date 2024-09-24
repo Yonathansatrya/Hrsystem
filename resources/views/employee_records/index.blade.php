@@ -57,7 +57,7 @@
     <div id="commentModal" class="modal" style="display:none;">
         <div class="modal-content">
             <span class="close" onclick="closeCommentModal()">&times;</span>
-            <h2>Komentar</h2>
+            <h2>Komentars</h2>
             <textarea id="commentText" placeholder="Tulis komentar..." rows="3" required></textarea>
             <button id="submitCommentBtn">Kirim</button>
         </div>
